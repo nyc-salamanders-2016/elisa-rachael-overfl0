@@ -20,7 +20,7 @@ class QuestionView extends React.Component {
     return(
       <div>
       <li onClick={this.toggleDetails}>
-        <h3>{this.props.data.title}</h3>
+        <h3>{this.props.data.title}</h3> asked by <span id="author-info">{this.props.data.author.username}</span>
         { this.state.detailsDisplayed ? (<p> {this.props.data.body} - <a href={`/questions/${this.props.data.id}`}>See full question</a></p>)
          : null }
       </li>

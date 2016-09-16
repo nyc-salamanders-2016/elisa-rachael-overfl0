@@ -1,6 +1,6 @@
 class QuestionsController < ApplicationController
   def index
-    @questions = Question.all.order("created_at DESC").to_json
+    @questions = Question.all.order("created_at DESC")
   end
 
   def show

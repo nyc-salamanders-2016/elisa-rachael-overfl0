@@ -8,8 +8,13 @@ class AppView extends React.Component {
   }
 
   componentDidMount() {
-    this.setState({
-      questions: JSON.parse(this.props.questions)
+    $.ajax({
+      method: 'get',
+      url: '/questions.json'
+    }).done((response) => {
+      this.setState({
+        questions: response
+      })
     })
   }
 
