@@ -1,0 +1,8 @@
+<h2>Please create an account</h2>
+
+<%= form_for @user, url: users_path do |f| %>
+  <%= f.text_field :username, placeholder: true %>
+  <%= f.text_field :email, placeholder: true %>
+  <%= f.password_field :password, placeholder: true %>
+  <%= f.submit %>
+<% end %>
