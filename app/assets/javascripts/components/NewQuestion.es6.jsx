@@ -32,7 +32,7 @@ class NewQuestion extends React.Component {
         <h2>Ask a question</h2>
         <form id="question-form" onSubmit={this.handleSubmit}>
         Title: <input ref="questionTitle" name="question[title]"/><br />
-          <textarea ref="questionBody" cols="40" rows="10" maxLength="200" name="question[body]" placeholder="question"></textarea>
+          <textarea ref="questionBody" cols="40" rows="10" maxLength="200" name="question[body]" placeholder="question"></textarea><br />
           <input type="submit" value="Ask" />
         </form>
       </div>
