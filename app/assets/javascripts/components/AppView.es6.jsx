@@ -20,7 +20,7 @@ class AppView extends React.Component {
 
   renderNewQuestions(newQuestion) {
     this.setState({
-      questions: [newQuestion].concat(this.state.questions)
+      questions: newQuestion.concat(this.state.questions)
     })
   }
 

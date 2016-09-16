@@ -4,6 +4,8 @@ class QuestionsController < ApplicationController
   end
 
   def show
+    @question= Question.find(params[:id])
+    @user = @question.user
   end
 
   def new
@@ -11,11 +13,11 @@ class QuestionsController < ApplicationController
 
   def create
     user = User.find(session[:user_id])
-    question = user.questions.build(question_params)
-    if question.save
-      render json: question.to_json
+    @questions = [user.questions.build(question_params)]
+    if @questions[0].save!
+      render 'index.json.jbuilder'
     else
-      @errors = question.errors.full_messages
+      @errors = @questions[0].errors.full_messages
       render 'new'
     end
   end
